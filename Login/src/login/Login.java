@@ -98,8 +98,21 @@ public class Login {
                     Login user = new Login(first, last, uname, pass, cell);
                     System.out.println(user.registerUser());
                 }
-                case 2 -> System.out.println("Login coming soon. Please register first!");
-                default -> System.out.println("Invalid option. Please enter 1 or 2.");
+                case 2 -> {
+                    Object user = null;
+    if (user == null) {
+        System.out.println("Please register first!");
+        break;
+    }
+
+    System.out.print("Enter username: ");
+    String enteredUsername = scanner.nextLine();
+
+    System.out.print("Enter password: ");
+    String enteredPassword = scanner.nextLine();
+
+    System.out.println(user.returnLoginStatus(enteredUsername, enteredPassword));
+}
             }
         }
     }
